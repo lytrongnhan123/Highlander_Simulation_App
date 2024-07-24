@@ -1,0 +1,53 @@
+﻿<Window x:Class="FinalProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- Star sizing for main content area -->
+            <ColumnDefinition Width="Auto" />
+            <!-- Auto sizing for control panel -->
+        </Grid.ColumnDefinitions>
+        <Grid Name="BoardGrid" Margin="10" Grid.Column="0">
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="425" Margin="10" Grid.Column="1" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="Number of Columns:" Grid.Row="0" Margin="5"/>
+            <TextBox x:Name="tbCol" Grid.Row="1" Margin="5" Width="150" />
+
+            <Label Content="Number of Rows:" Grid.Row="2" Margin="5"/>
+            <TextBox x:Name="tbRow" Grid.Row="3" Margin="5" Width="150" />
+            <Label Content="Box Height:" Grid.Row="4" Margin="5"/>
+            <TextBox x:Name="tbHeight" Grid.Row="5" Margin="5" Width="150" />
+
+            <Label Content="Box Width:" Grid.Row="6" Margin="5"/>
+            <TextBox x:Name="tbWidth" Grid.Row="7" Margin="5" Width="150" />
+            <Label Content="Quantity:" Grid.Row="8" Margin="5"/>
+            <TextBox x:Name="tbQuantity" Grid.Row="9" Margin="5" Width="150" />
+            <Button x:Name="btnGenerateHighlander" Content="Generate Highlanders!" Grid.Row="10" Width="150" Margin="5" Click="btnGenerateHighLander_Click"/>
+            <Button Margin="5" Grid.Row="11" Width="120" Content="Start Simulation!"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

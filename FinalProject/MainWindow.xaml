@@ -13,9 +13,11 @@
             <ColumnDefinition Width="Auto" />
             <!-- Auto sizing for control panel -->
         </Grid.ColumnDefinitions>
-        <Grid Name="BoardGrid" Margin="10" Grid.Column="0">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid Name="BoardGrid" Margin="10" Grid.Column="0">
 
-        </Grid>
+            </Grid>
+        </ScrollViewer>
         <Grid HorizontalAlignment="Left" Height="425" Margin="10" Grid.Column="1" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

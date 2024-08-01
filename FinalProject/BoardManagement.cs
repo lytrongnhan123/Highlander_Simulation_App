@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace FinalProject
 {
@@ -68,10 +69,19 @@ namespace FinalProject
                     row = random.Next(boardHeight);
                     col = random.Next(boardWidth);
                 } while (btns[row, col].Content != null);
-                //highlanders[k].Pos.X = row;
-                //highlanders[k].Pos.Y = col;
 
                 btns[row, col].Content = highlanders[k].Id;
+                highlanders[k].Pos = new Position(row, col);
+                if (highlanders[k].isGood)
+                {
+                    btns[row, col].Background = new SolidColorBrush(Colors.SkyBlue);
+                }
+                else
+                {
+                    btns[row, col].Background = new SolidColorBrush(Colors.Red);
+                }
+                
+                
             }
             this.highlanders = highlanders;
         }
@@ -87,9 +97,9 @@ namespace FinalProject
                     highlander = highlanders[i];
                 }
             }
-            if (id != null)
+            if (id != "")
             {
-                MessageBox.Show(String.Format("ID: {0}\nName: {1}\nAge: {2}\nPower Level: {3}\n", highlander.Id, highlander.Name, highlander.Age, highlander.PowerLevel));
+                MessageBox.Show(String.Format("ID: {0}\nName: {1}\nAge: {2}\nPower Level: {3}\nPosition: ({4}, {5})", highlander.Id, highlander.Name, highlander.Age, highlander.PowerLevel, highlander.Pos.X, highlander.Pos.Y));
             }
         }
 

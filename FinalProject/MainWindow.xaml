@@ -8,17 +8,22 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="9*" />
+            <ColumnDefinition Width="97*"/>
             <!-- Star sizing for main content area -->
             <ColumnDefinition Width="Auto" />
             <!-- Auto sizing for control panel -->
         </Grid.ColumnDefinitions>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
             <Grid Name="BoardGrid" Margin="10" Grid.Column="0">
-
+                <Grid.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/background.jpg" Stretch="UniformToFill"></ImageBrush>
+                </Grid.Background>
             </Grid>
         </ScrollViewer>
-        <Grid HorizontalAlignment="Left" Height="425" Margin="10" Grid.Column="1" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2"/>
+        <Grid x:Name="InputGrid" HorizontalAlignment="Center" Height="425" Margin="0,10,0,0" Grid.Column="2" VerticalAlignment="Top" Width="250">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -33,21 +38,36 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label Content="Number of Columns:" Grid.Row="0" Margin="5"/>
-            <TextBox x:Name="tbCol" Grid.Row="1" Margin="5" Width="150" />
+            <TextBox x:Name="tbCol" Grid.Row="0" Margin="130,5,24,5" />
 
-            <Label Content="Number of Rows:" Grid.Row="2" Margin="5"/>
-            <TextBox x:Name="tbRow" Grid.Row="3" Margin="5" Width="150" />
-            <Label Content="Box Height:" Grid.Row="4" Margin="5"/>
-            <TextBox x:Name="tbHeight" Grid.Row="5" Margin="5" Width="150" />
+            <Label Content="Number of Rows:" Grid.Row="1" Margin="5"/>
+            <TextBox x:Name="tbRow" Grid.Row="1" Margin="130,5,24,5" />
+            
+            <Label Content="Box Height:" Grid.Row="2" Margin="5"/>
+            <TextBox x:Name="tbHeight" Grid.Row="2" Margin="130,5,24,5" />
 
-            <Label Content="Box Width:" Grid.Row="6" Margin="5"/>
-            <TextBox x:Name="tbWidth" Grid.Row="7" Margin="5" Width="150" />
-            <Label Content="Quantity:" Grid.Row="8" Margin="5"/>
-            <TextBox x:Name="tbQuantity" Grid.Row="9" Margin="5" Width="150" />
-            <Button x:Name="btnGenerateHighlander" Content="Generate Highlanders!" Grid.Row="10" Width="150" Margin="5" Click="btnGenerateHighLander_Click"/>
-            <Button Margin="5" Grid.Row="11" Width="120" Content="Start Simulation!"/>
+            <Label Content="Box Width:" Grid.Row="3" Margin="5"/>
+            <TextBox x:Name="tbWidth" Grid.Row="3" Margin="130,5,24,5" />
+            
+            <Label Content="Quantity:" Grid.Row="4" Margin="5"/>
+            <TextBox x:Name="tbQuantity" Grid.Row="4" Margin="130,5,24,5" />
+            
+            <Button x:Name="btnGenerateHighlander" Content="Generate Highlanders!" Grid.Row="5" Width="150" Margin="5" Click="btnGenerateHighLander_Click"/>
+            
+            <CheckBox x:Name="cbOption1" Content="Option 1" HorizontalAlignment="Left"  Grid.Row="6" VerticalAlignment="Center" Margin="24,0,0,0"/>
+            <CheckBox x:Name="cbOption2" Content="Option 2" HorizontalAlignment="Left"  Grid.Row="6" VerticalAlignment="Center" Margin="155,0,0,0"/>
+            
+            <Label Content="Number of runs:" Grid.Row="7" Margin="5"/>
+            <TextBox x:Name="tbNumOfRuns" Grid.Row="7" Margin="130,5,24,5" />
+            
+            <Button Margin="0,5,130,5" Grid.Row="8" Width="120" Content="Start Simulation!"/>
+            <Button Margin="130,5,0,5" Grid.Row="8" Width="120" Content="Stop Simulation!"/>
+            <Button Grid.Row="9" Width="120" Content="Stop Simulation!"/>
+            <TextBlock x:Name="tblOptions" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="10" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFA50C0C" Text="Message will appear here" />
+
 
         </Grid>
 

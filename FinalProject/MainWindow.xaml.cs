@@ -25,6 +25,9 @@ namespace FinalProject
         public MainWindow()
         {
             InitializeComponent();
+            tblOptions.Text = loadOptionMessage();
+            
+
         }
 
         private void btnGenerateHighLander_Click(object sender, RoutedEventArgs e)
@@ -37,6 +40,7 @@ namespace FinalProject
                 bs.BoardWidth = Convert.ToInt32(tbCol.Text);
                 bs.BtnHeight = Convert.ToInt32(tbHeight.Text);
                 bs.BtnWidth = Convert.ToInt32(tbWidth.Text);
+                
                 int quantity = Convert.ToInt32(tbQuantity.Text);
 
                 bm.generateRandomHighlander(bs.BoardWidth, bs.BoardHeight, quantity, bs.BtnHeight, bs.BtnWidth);
@@ -47,5 +51,12 @@ namespace FinalProject
                 MessageBox.Show("Error!");
             }
         }
+        public static string loadOptionMessage()
+        {
+            return "- Option 1: Simulation will continue until \nthere is 1 highlander left" +
+                "\n- Option 2: A certain number of simulation \nruns occurs. Type in the number of iterations:";
+        }
+
+        
     }
 }

@@ -49,7 +49,8 @@ namespace FinalProject
                     {
                         Width = boxWidth,
                         Height = boxHeight,
-                        Margin = new Thickness(0)
+                        Margin = new Thickness(0),
+                        Background=null
                     };
                     btn.Click += Button_Click;
                     Grid.SetRow(btn, i);
@@ -102,6 +103,7 @@ namespace FinalProject
                 MessageBox.Show(String.Format("ID: {0}\nName: {1}\nAge: {2}\nPower Level: {3}\nPosition: ({4}, {5})", highlander.Id, highlander.Name, highlander.Age, highlander.PowerLevel, highlander.Pos.X, highlander.Pos.Y));
             }
         }
+        
 
 
     }
